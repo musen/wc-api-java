@@ -144,24 +144,28 @@ public class HttpClient {
     public String request(String endpoint, String method, String data, Map<String, String> parameters) throws UnsupportedEncodingException, NoSuchAlgorithmException, InvalidKeyException, UnirestException {
 
         Request request = this.createRequest(endpoint, method, data, parameters);
+        String responseString = new String();
 
         this.setDefaultUnirestSettings();
 
         System.out.println(request.getUrl());
 
         if(method == "GET") {
-
-            return Unirest.get(request.getUrl()).asString().getBody().toString();
+            responseString = Unirest.get(request.getUrl()).asString().getBody().toString();
             //this.httpResponse = Unirest.get(request.getUrl()).asJson();
             //Response response = this.createResponse();
-        } else {
-
-            JsonNode jsonNode = new JsonNode(data);
-
-            return Unirest.post(request.getUrl()).body(jsonNode).asString().getBody().toString();
+        }
+        if(method == "POST") {
+            responseString = Unirest.post(request.getUrl()).body(new JsonNode(data)).asString().getBody().toString();
+        }
+        if(method == "PUT") {
+            responseString = Unirest.put(request.getUrl()).body(new JsonNode(data)).asString().getBody().toString();
+        }
+        if(method == "DELETE") {
+            responseString = Unirest.delete(request.getUrl()).asString().getBody().toString();
         }
 
-        //return this.httpResponse.getBody().toString();
+        return responseString;
     }
 
     public Request getRequest() {
