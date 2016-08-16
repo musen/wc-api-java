@@ -29,4 +29,12 @@ public class Client {
         return this.http.request(endpoint, "GET", null, null);
     }
 
+    public String put(String endpoint, String data) throws UnirestException, NoSuchAlgorithmException, InvalidKeyException, UnsupportedEncodingException {
+        return this.http.request(endpoint, "PUT", data, null);
+    }
+
+    public String delete(String endpoint) throws UnirestException, NoSuchAlgorithmException, InvalidKeyException, UnsupportedEncodingException {
+        return this.http.request(endpoint, "DELETE", null, null);
+    }
+
 }
