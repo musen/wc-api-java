@@ -1,4 +1,4 @@
-package musen.woocommerce.httpclient;
+package com.g360.woocommerce.client.httpclient;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.codec.binary.Base64;
