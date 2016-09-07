@@ -1,4 +1,4 @@
-package musen.woocommerce.httpclient;
+package com.g360.woocommerce.client.httpclient;
 
 import java.util.Map;
 

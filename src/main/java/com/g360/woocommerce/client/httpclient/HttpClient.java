@@ -1,10 +1,10 @@
-package musen.woocommerce.httpclient;
+package com.g360.woocommerce.client.httpclient;
 
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
-import musen.woocommerce.Client;
+import com.g360.woocommerce.client.Client;
 
 import java.io.UnsupportedEncodingException;
 import java.security.InvalidKeyException;
